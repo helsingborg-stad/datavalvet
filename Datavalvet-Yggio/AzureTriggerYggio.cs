@@ -65,11 +65,11 @@ namespace HelsingborgsStad.AzureTriggerYggio
             string year = payloadTime.ToString("yyyy");
             string month = payloadTime.ToString("MM");
             string day = payloadTime.ToString("dd");
-            string deliveryFolderName = $"yggio/{year}/{month}/{day}/{devEUI}";
+            string deliveryFolderName = $"yggio/{devEUI}/{year}/{month}/{day}";
 
             if (error)
             {
-                deliveryFolderName = $"yggio/{year}/{month}/{day}/{devEUI}/error";
+                deliveryFolderName = $"yggioerror/{devEUI}/{year}/{month}/{day}";
             }
             
             DataLakeDirectoryClient directoryClient =
